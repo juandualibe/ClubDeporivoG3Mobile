@@ -43,7 +43,7 @@ class SociosActivity : AppCompatActivity() {
             when (accion) {
                 "editar" -> {
                     val intent = Intent(this, ModificarSociosActivity::class.java)
-                    intent.putExtra("SOCIO_NOMBRE", socio) // Pasar el nombre del socio
+                    intent.putExtra("SOCIO_NOMBRE", socio)
                     startActivity(intent)
                 }
                 "eliminar" -> Toast.makeText(this, "Eliminar: $socio", Toast.LENGTH_SHORT).show()
@@ -54,7 +54,8 @@ class SociosActivity : AppCompatActivity() {
         // Botón Vencimientos hoy
         val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
         btnVencimientos.setOnClickListener {
-            Toast.makeText(this, "Mostrar vencimientos de hoy", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, VencimientosActivity::class.java)
+            startActivity(intent)
         }
 
         // Botón Agregar socio
