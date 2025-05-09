@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".MenuActivity">
+
+    <!-- LinearLayout para el botón Volver y el título -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <!-- Botón Volver -->
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/textViewTitulo"
+            android:layout_width="187dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:text="Menú de Usuario"
+            android:textAlignment="center"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Botón Socios -->
+
+    <!-- Botón No Socios -->
+
+    <Button
+        android:id="@+id/btnSocios"
+        android:layout_width="205dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_background"
+        android:clipToOutline="false"
+        android:elevation="0dp"
+        android:outlineProvider="none"
+        android:stateListAnimator="@null"
+        android:text="Socios"
+        android:translationZ="0dp" />
+
+    <Button
+        android:id="@+id/btnNoSocios"
+        android:layout_width="205dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_background"
+        android:clipToOutline="false"
+        android:elevation="0dp"
+        android:outlineProvider="none"
+        android:stateListAnimator="@null"
+        android:text="No Socios"
+        android:translationZ="0dp" />
+
+    <!-- Botón Actividades -->
+    <Button
+        android:id="@+id/btnActividades3"
+        android:layout_width="205dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_background"
+        android:clipToOutline="false"
+        android:elevation="0dp"
+        android:outlineProvider="none"
+        android:stateListAnimator="@null"
+        android:text="Actividades"
+        android:translationZ="0dp" />
+
+    <!-- Espacio flexible para empujar el botón Salir hacia abajo -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- LinearLayout para el botón Salir alineado a la derecha -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:layout_marginBottom="27dp">
+
+        <Button
+            android:id="@+id/btnSalir"
+            android:layout_width="99dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/button_background"
+            android:clipToOutline="false"
+            android:elevation="0dp"
+            android:outlineProvider="none"
+            android:stateListAnimator="@null"
+            android:text="Salir"
+            android:translationZ="0dp" />
+    </LinearLayout>
+
+</LinearLayout>
