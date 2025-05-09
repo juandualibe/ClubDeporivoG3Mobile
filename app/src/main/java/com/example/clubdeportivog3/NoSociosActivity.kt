@@ -39,7 +39,11 @@ class NoSociosActivity : AppCompatActivity() {
         // Configurar adaptador (reutilizamos AdaptadorSocios)
         val adaptadorNoSocios = AdaptadorSocios(listaNoSocios) { accion, noSocio ->
             when (accion) {
-                "editar" -> Toast.makeText(this, "Editar: $noSocio", Toast.LENGTH_SHORT).show()
+                "editar" -> {
+                    val intent = Intent(this, ModificarNoSociosActivity::class.java)
+                    intent.putExtra("NO_SOCIO_NOMBRE", noSocio)
+                    startActivity(intent)
+                }
                 "eliminar" -> Toast.makeText(this, "Eliminar: $noSocio", Toast.LENGTH_SHORT).show()
             }
         }
@@ -48,7 +52,8 @@ class NoSociosActivity : AppCompatActivity() {
         // Botón Agregar no socio
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
         btnAgregar.setOnClickListener {
-            Toast.makeText(this, "Agregar nuevo no socio", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ModificarNoSociosActivity::class.java)
+            startActivity(intent)
         }
 
         // Botón Volver
