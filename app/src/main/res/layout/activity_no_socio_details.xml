@@ -125,7 +125,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Registrar Pago"
-            android:backgroundTint="#3F51B5"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
@@ -146,7 +145,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Inscribir en Actividad"
-            android:backgroundTint="#3F51B5"
             android:textColor="#FFFFFF"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"/>
@@ -181,7 +179,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Revocar"
-                    android:backgroundTint="#3F51B5"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
 
@@ -208,7 +205,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Revocar"
-                    android:backgroundTint="#3F51B5"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
 
@@ -235,7 +231,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Revocar"
-                    android:backgroundTint="#3F51B5"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
 
@@ -262,7 +257,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Revocar"
-                    android:backgroundTint="#3F51B5"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
 
@@ -289,7 +283,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Revocar"
-                    android:backgroundTint="#3F51B5"
                     android:textColor="#FFFFFF"/>
             </LinearLayout>
         </LinearLayout>
