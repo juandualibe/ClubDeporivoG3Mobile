@@ -22,7 +22,7 @@ class AddEditNoSocioActivity : AppCompatActivity() {
             insets
         }
 
-        // Obtener referencias a los campos
+        // Referencias a los elementos del layout
         val etNombre = findViewById<EditText>(R.id.etNombre)
         val etApellido = findViewById<EditText>(R.id.etApellido)
         val etDNI = findViewById<EditText>(R.id.etDNI)
@@ -33,49 +33,44 @@ class AddEditNoSocioActivity : AppCompatActivity() {
         val btnConfirmar = findViewById<Button>(R.id.btnConfirmar)
         val btnVolver = findViewById<Button>(R.id.btnVolver)
 
-        // Verificar si es edición (datos precargados)
+        // Verificar si es modo edición
         val noSocioNombre = intent.getStringExtra("NO_SOCIO_NOMBRE")
-        if (!noSocioNombre.isNullOrEmpty()) {
-            // Simulamos datos para edición (puedes reemplazar con datos reales de una BD)
-            etNombre.setText(noSocioNombre.split(" ")[0]) // Nombre
-            etApellido.setText(noSocioNombre.split(" ").getOrElse(1) { "" }) // Apellido
-            // Aquí podrías precargar otros campos si tienes más datos
+        if (noSocioNombre != null) {
+            // Modo edición: precargar datos
+            val nombreApellido = noSocioNombre.split(" ")
+            etNombre.setText(nombreApellido[0])
+            etApellido.setText(nombreApellido.getOrNull(1) ?: "")
+            // Otros campos podrían precargarse si tienes más datos en el Intent
         }
 
-        // Acción del botón Confirmar
-        btnConfirmar.setOnClickListener {
-            val nombre = etNombre.text.toString().trim()
-            val apellido = etApellido.text.toString().trim()
-            val dni = etDNI.text.toString().trim()
-            val correo = etCorreo.text.toString().trim()
-            val telefono = etTelefono.text.toString().trim()
-            val pagoDiario = etPagoDiario.text.toString().trim()
-            val aptoFisico = cbAptoFisico.isChecked
-
-            // Validaciones básicas
-            if (nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty() || correo.isEmpty() || telefono.isEmpty() || pagoDiario.isEmpty()) {
-                Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            // Simular guardado (puedes conectar con una base de datos aquí)
-            Toast.makeText(
-                this,
-                "No Socio: $nombre $apellido\nDNI: $dni\nCorreo: $correo\nTeléfono: $telefono\nPago diario: $$pagoDiario\nApto físico: $aptoFisico",
-                Toast.LENGTH_LONG
-            ).show()
-
-            // Volver a NoSociosActivity
-            val intent = Intent(this, NoSocioListActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        // Acción del botón Volver
+        // Botón Volver
         btnVolver.setOnClickListener {
             val intent = Intent(this, NoSocioListActivity::class.java)
             startActivity(intent)
-            finish()
+            finish() // Cierra AddEditNoSocioActivity
+        }
+
+        // Botón Confirmar
+        btnConfirmar.setOnClickListener {
+            // Variables de ejemplo para pequeña validación
+            val nombre = etNombre.text.toString()
+            val apellido = etApellido.text.toString()
+            val dni = etDNI.text.toString()
+
+            // ESTAS VARIABLES LAS VAMOS A USAR DESPUÉS PARA HACER VALIDACIONES MAS FUERTES!
+            val correo = etCorreo.text.toString()
+            val telefono = etTelefono.text.toString()
+            val pagoDiario = etPagoDiario.text.toString().toDoubleOrNull() ?: 0.0
+            val aptoFisico = cbAptoFisico.isChecked
+
+            if (nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty()) {
+                Toast.makeText(this, "Por favor, completa los campos obligatorios (Nombre, Apellido, DNI)", Toast.LENGTH_SHORT).show()
+            } else {
+                // Abrir AddedEditedNoSocioActivity
+                val intent = Intent(this, AddedEditedNoSocioActivity::class.java)
+                startActivity(intent)
+                finish() // Cierra AddEditNoSocioActivity
+            }
         }
     }
 }

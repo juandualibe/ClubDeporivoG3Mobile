@@ -44,9 +44,12 @@ class AddEditSocioActivity : AppCompatActivity() {
 
         // Botón Confirmar
         btnConfirmar.setOnClickListener {
+            // Variables de ejemplo para pequeña validación
             val nombre = editNombre.text.toString()
             val apellido = editApellido.text.toString()
             val dni = editDni.text.toString()
+
+            // ESTAS VARIABLES LAS VAMOS A USAR DESPUÉS PARA HACER VALIDACIONES MAS FUERTES!
             val correo = editCorreo.text.toString()
             val telefono = editTelefono.text.toString()
             val cuota = editCuota.text.toString().toDoubleOrNull() ?: 0.0
