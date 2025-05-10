@@ -25,7 +25,6 @@
             android:background="@android:drawable/ic_menu_revert"
             android:text="←"
             android:textSize="24sp"
-            android:textColor="#FCF5FD"
             android:gravity="center"
             android:contentDescription="Volver al menú"
             app:layout_constraintStart_toStartOf="parent"
