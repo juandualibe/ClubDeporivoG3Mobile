@@ -70,13 +70,10 @@ class AddEditActividadActivity : AppCompatActivity() {
             if (nombre.isEmpty() || horario.isEmpty() || monto == 0.0 || cupo == 0 || dia == "Día de la semana") {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(
-                    this,
-                    "Actividad: $nombre, Horario: $horario, Monto: $$monto, Cupo: $cupo, Día: $dia",
-                    Toast.LENGTH_LONG
-                ).show()
-                // Aquí iría la lógica para guardar la actividad (base de datos, etc.)
-                finish() // Cierra la actividad después de confirmar
+                // Abrir AddedEditedActivity en lugar de mostrar un Toast
+                val intent = Intent(this, AddedEditedActivity::class.java)
+                startActivity(intent)
+                finish() // Cierra AddEditActividadActivity
             }
         }
     }
