@@ -1,9 +1,11 @@
 package com.example.clubdeportivog3
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,6 +20,7 @@ class AdaptadorActividades(
         val textoDescripcion: TextView = itemView.findViewById(R.id.textoDescripcion)
         val iconoEditar: ImageView = itemView.findViewById(R.id.iconoEditar)
         val iconoEliminar: ImageView = itemView.findViewById(R.id.iconoEliminar)
+        val contenedorTexto: LinearLayout = itemView.findViewById(R.id.contenedorTexto)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,6 +33,16 @@ class AdaptadorActividades(
         val actividad = listaActividades[position]
         holder.textoNombre.text = actividad.nombre
         holder.textoDescripcion.text = actividad.descripcion
+
+        // Navegar a ActividadDetailsActivity al hacer clic en el contenedor de texto
+        holder.contenedorTexto.setOnClickListener {
+            val intent = Intent(holder.itemView.context, ActividadDetailsActivity::class.java).apply {
+                putExtra("ACTIVIDAD_NOMBRE", actividad.nombre)
+                putExtra("ACTIVIDAD_DESCRIPCION", actividad.descripcion)
+                putExtra("ACTIVIDAD_NUMERO", position + 1) // Número ficticio
+            }
+            holder.itemView.context.startActivity(intent)
+        }
 
         holder.iconoEditar.setOnClickListener {
             onAccionActividad("editar", actividad)
