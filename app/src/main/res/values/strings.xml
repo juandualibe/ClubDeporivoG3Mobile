@@ -49,7 +49,7 @@
     <!-- Actividades -->
     <string name="activity">Actividad</string>
     <string name="activity_add_edit_title">Añadir/Editar Actividad</string>
-    <string name="activity_details">DETALLES DE LA ACTIVIDAD</string>
+    <string name="activity_details">Detalles de la Actividad</string>
     <string name="activity_icon_description">Ícono de la actividad</string>
     <string name="activity_id_label">Actividad N° #</string>
     <string name="activity_list">Lista de Actividades</string>
