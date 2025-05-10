@@ -26,20 +26,31 @@ class ActividadesListActivity : AppCompatActivity() {
         val recyclerViewActividades = findViewById<RecyclerView>(R.id.recyclerViewActividades)
         recyclerViewActividades.layoutManager = LinearLayoutManager(this)
 
-        // Lista de actividades ficticia con descripciones
+        // Lista de actividades ficticia con descripciones y nuevos campos
         val listaActividades = listOf(
-            ActividadDeportiva("Fútbol", "Partidos semanales en cancha sintética"),
-            ActividadDeportiva("Básquet", "Entrenamiento y torneos locales"),
-            ActividadDeportiva("Natación", "Clases para todas las edades"),
-            ActividadDeportiva("Yoga", "Sesiones de relajación y estiramiento"),
-            ActividadDeportiva("Tenis", "Canchas disponibles para práctica"),
-            ActividadDeportiva("Vóley", "Entrenamiento en playa y gimnasio")
+            ActividadDeportiva("Fútbol", "Partidos semanales en cancha sintética", "Lunes 18:00-20:00", 15000.0, 20, "Lunes"),
+            ActividadDeportiva("Básquet", "Entrenamiento y torneos locales", "Miércoles 19:00-21:00", 12000.0, 15, "Miércoles"),
+            ActividadDeportiva("Natación", "Clases para todas las edades", "Viernes 17:00-18:30", 18000.0, 10, "Viernes"),
+            ActividadDeportiva("Yoga", "Sesiones de relajación y estiramiento", "Martes 08:00-09:30", 10000.0, 12, "Martes"),
+            ActividadDeportiva("Tenis", "Canchas disponibles para práctica", "Jueves 16:00-18:00", 20000.0, 8, "Jueves"),
+            ActividadDeportiva("Vóley", "Entrenamiento en playa y gimnasio", "Sábado 10:00-12:00", 13000.0, 16, "Sábado")
         )
 
         // Configurar adaptador
-        val adaptadorActividades = AdaptadorActividades(listaActividades) { accion, actividad: ActividadDeportiva ->
+        val adaptadorActividades = AdaptadorActividades(listaActividades) { accion, actividad ->
             when (accion) {
-                "editar" -> Toast.makeText(this, "Editar: ${actividad.nombre}", Toast.LENGTH_SHORT).show()
+                "editar" -> {
+                    val intent = Intent(this, AddEditActividadActivity::class.java).apply {
+                        putExtra("ACTIVIDAD_NOMBRE", actividad.nombre)
+                        putExtra("ACTIVIDAD_DESCRIPCION", actividad.descripcion)
+                        putExtra("ACTIVIDAD_HORARIO", actividad.horario)
+                        putExtra("ACTIVIDAD_MONTO", actividad.monto)
+                        putExtra("ACTIVIDAD_CUPO", actividad.cupoMaximo)
+                        putExtra("ACTIVIDAD_DIA", actividad.dia)
+                        putExtra("MODO", "editar")
+                    }
+                    startActivity(intent)
+                }
                 "eliminar" -> Toast.makeText(this, "Eliminar: ${actividad.nombre}", Toast.LENGTH_SHORT).show()
             }
         }
@@ -48,7 +59,10 @@ class ActividadesListActivity : AppCompatActivity() {
         // Botón Agregar actividad
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
         btnAgregar.setOnClickListener {
-            Toast.makeText(this, "Agregar nueva actividad", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AddEditActividadActivity::class.java).apply {
+                putExtra("MODO", "añadir")
+            }
+            startActivity(intent)
         }
 
         // Botón Volver

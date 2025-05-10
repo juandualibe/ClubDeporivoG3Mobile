@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ClubDeportivoG3"
         tools:targetApi="31">
         <activity
+            android:name=".AddEditActividadActivity"
+            android:exported="false" />
+        <activity
             android:name=".ActividadDetailsActivity"
             android:exported="false" />
         <activity
