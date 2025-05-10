@@ -11,11 +11,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class ModificarNoSociosActivity : AppCompatActivity() {
+class AddEditNoSocioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_modificar_no_socios)
+        setContentView(R.layout.activity_add_edit_no_socio)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -66,14 +66,14 @@ class ModificarNoSociosActivity : AppCompatActivity() {
             ).show()
 
             // Volver a NoSociosActivity
-            val intent = Intent(this, NoSociosActivity::class.java)
+            val intent = Intent(this, NoSocioListActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         // Acción del botón Volver
         btnVolver.setOnClickListener {
-            val intent = Intent(this, NoSociosActivity::class.java)
+            val intent = Intent(this, NoSocioListActivity::class.java)
             startActivity(intent)
             finish()
         }

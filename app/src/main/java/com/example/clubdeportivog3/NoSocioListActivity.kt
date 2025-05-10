@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class NoSociosActivity : AppCompatActivity() {
+class NoSocioListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -40,7 +40,7 @@ class NoSociosActivity : AppCompatActivity() {
         val adaptadorNoSocios = AdaptadorNoSocios(listaNoSocios) { accion, noSocio ->
             when (accion) {
                 "editar" -> {
-                    val intent = Intent(this, ModificarNoSociosActivity::class.java)
+                    val intent = Intent(this, AddEditNoSocioActivity::class.java)
                     intent.putExtra("NO_SOCIO_NOMBRE", noSocio)
                     startActivity(intent)
                 }
@@ -52,7 +52,7 @@ class NoSociosActivity : AppCompatActivity() {
         // Botón Agregar no socio
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
         btnAgregar.setOnClickListener {
-            val intent = Intent(this, ModificarNoSociosActivity::class.java)
+            val intent = Intent(this, AddEditNoSocioActivity::class.java)
             startActivity(intent)
         }
 

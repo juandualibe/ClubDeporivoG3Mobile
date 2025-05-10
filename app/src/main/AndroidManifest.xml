@@ -19,16 +19,16 @@
             android:name=".SocioDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".ModificarNoSociosActivity"
+            android:name=".AddEditNoSocioActivity"
             android:exported="false" />
         <activity
-            android:name=".VencimientosActivity"
+            android:name=".ExpirationActivity"
             android:exported="false" />
         <activity
-            android:name=".ModificarSociosActivity"
+            android:name=".AddEditSocioActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,19 +37,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegistrarActivity"
+            android:name=".SignUpActivity"
             android:exported="false" />
         <activity
             android:name=".MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".SociosActivity"
+            android:name=".SocioListActivity"
             android:exported="false" />
         <activity
-            android:name=".NoSociosActivity"
+            android:name=".NoSocioListActivity"
             android:exported="false" />
         <activity
-            android:name=".ActividadesActivity"
+            android:name=".ActividadesListActivity"
             android:exported="false" />
     </application>
 

@@ -50,7 +50,7 @@ class NoSocioDetailsActivity : AppCompatActivity() {
 
         // Botón Volver
         btnVolver.setOnClickListener {
-            val intent = Intent(this, NoSociosActivity::class.java)
+            val intent = Intent(this, NoSocioListActivity::class.java)
             startActivity(intent)
             finish()
         }

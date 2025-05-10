@@ -9,11 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class ModificarSociosActivity : AppCompatActivity() {
+class AddEditSocioActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_modificar_socios)
+        setContentView(R.layout.activity_add_edit_socio)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -23,7 +23,7 @@ class ModificarSociosActivity : AppCompatActivity() {
         // Botón Volver
         val btnVolver = findViewById<Button>(R.id.btnVolver)
         btnVolver.setOnClickListener {
-            val intent = Intent(this, SociosActivity::class.java)
+            val intent = Intent(this, SocioListActivity::class.java)
             startActivity(intent)
             finish() // Cierra ModificarSociosActivity
         }

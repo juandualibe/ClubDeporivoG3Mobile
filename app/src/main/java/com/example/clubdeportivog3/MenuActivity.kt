@@ -27,25 +27,25 @@ class MenuActivity : AppCompatActivity() {
 
         // Navegar a SociosActivity
         btnSocios.setOnClickListener {
-            val intent = Intent(this, SociosActivity::class.java)
+            val intent = Intent(this, SocioListActivity::class.java)
             startActivity(intent)
         }
 
         // Navegar a NoSociosActivity
         btnNoSocios.setOnClickListener {
-            val intent = Intent(this, NoSociosActivity::class.java)
+            val intent = Intent(this, NoSocioListActivity::class.java)
             startActivity(intent)
         }
 
         // Navegar a ActividadesActivity
         btnActividades.setOnClickListener {
-            val intent = Intent(this, ActividadesActivity::class.java)
+            val intent = Intent(this, ActividadesListActivity::class.java)
             startActivity(intent)
         }
 
         // Cerrar sesión y volver al login
         btnSalir.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             finish() // Cierra MenuActivity
         }

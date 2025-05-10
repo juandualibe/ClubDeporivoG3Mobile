@@ -52,7 +52,7 @@ class SocioDetailsActivity : AppCompatActivity() {
 
         // Botón Volver
         btnVolver.setOnClickListener {
-            val intent = Intent(this, SociosActivity::class.java)
+            val intent = Intent(this, SocioListActivity::class.java)
             startActivity(intent)
             finish()
         }

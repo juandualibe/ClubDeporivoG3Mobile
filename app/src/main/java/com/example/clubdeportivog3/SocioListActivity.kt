@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class SociosActivity : AppCompatActivity() {
+class SocioListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -42,7 +42,7 @@ class SociosActivity : AppCompatActivity() {
         val adaptadorSocios = AdaptadorSocios(listaSocios) { accion, socio ->
             when (accion) {
                 "editar" -> {
-                    val intent = Intent(this, ModificarSociosActivity::class.java)
+                    val intent = Intent(this, AddEditSocioActivity::class.java)
                     intent.putExtra("SOCIO_NOMBRE", socio)
                     startActivity(intent)
                 }
@@ -54,14 +54,14 @@ class SociosActivity : AppCompatActivity() {
         // Botón Vencimientos hoy
         val btnVencimientos = findViewById<Button>(R.id.btnVencimientos)
         btnVencimientos.setOnClickListener {
-            val intent = Intent(this, VencimientosActivity::class.java)
+            val intent = Intent(this, ExpirationActivity::class.java)
             startActivity(intent)
         }
 
         // Botón Agregar socio
         val btnAgregar = findViewById<Button>(R.id.btnAgregar)
         btnAgregar.setOnClickListener {
-            val intent = Intent(this, ModificarSociosActivity::class.java)
+            val intent = Intent(this, AddEditSocioActivity::class.java)
             startActivity(intent)
         }
 

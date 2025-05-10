@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                 // Iniciar MenuActivity
                 val intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
-                // Opcional: finalizar MainActivity para que no se pueda volver atrás
+                // Opcional: finalizar SignInActivity para que no se pueda volver atrás
                 finish()
             } else {
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         // Acción al hacer clic en el texto "Regístrate"
         registerText.setOnClickListener {
-            val intent = Intent(this, RegistrarActivity::class.java)
+            val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
     }

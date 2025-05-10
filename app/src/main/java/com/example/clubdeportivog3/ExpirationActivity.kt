@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class VencimientosActivity : AppCompatActivity() {
+class ExpirationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -46,7 +46,7 @@ class VencimientosActivity : AppCompatActivity() {
         // Botón Volver
         val btnVolver = findViewById<Button>(R.id.btnVolver)
         btnVolver.setOnClickListener {
-            val intent = Intent(this, SociosActivity::class.java)
+            val intent = Intent(this, SocioListActivity::class.java)
             startActivity(intent)
             finish() // Cierra VencimientosActivity
         }
