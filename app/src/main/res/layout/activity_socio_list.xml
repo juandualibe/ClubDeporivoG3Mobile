@@ -77,10 +77,9 @@
             android:id="@+id/btnAgregar"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:text="+"
-            android:textSize="24sp"
-            android:background="@drawable/button_circle_background"
+            android:background="@android:drawable/ic_menu_add"
+            android:contentDescription="Agregar nuevo socio"
             android:gravity="center"
-            android:contentDescription="Agregar nuevo socio" />
+            android:textSize="24sp" />
     </LinearLayout>
 </LinearLayout>
