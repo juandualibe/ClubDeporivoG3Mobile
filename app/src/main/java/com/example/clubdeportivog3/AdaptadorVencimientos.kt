@@ -1,5 +1,6 @@
 package com.example.clubdeportivog3
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,7 @@ class AdaptadorVencimientos(
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val iconoSocio: ImageView = itemView.findViewById(R.id.iconoSocio)
         val textoSocio: TextView = itemView.findViewById(R.id.textoSocio)
-        val iconoPago: TextView = itemView.findViewById(R.id.iconoPago) // Cambiado de ImageView a TextView
+        val iconoPago: TextView = itemView.findViewById(R.id.iconoPago)
         val iconoEliminar: ImageView = itemView.findViewById(R.id.iconoEliminar)
     }
 
@@ -28,6 +29,16 @@ class AdaptadorVencimientos(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val socio = listaVencimientos[position]
         holder.textoSocio.text = socio
+
+        // Navegar a SocioDetailsActivity al hacer clic en el nombre
+        holder.textoSocio.setOnClickListener {
+            val intent = Intent(holder.itemView.context, SocioDetailsActivity::class.java).apply {
+                putExtra("SOCIO_NOMBRE", socio)
+                putExtra("SOCIO_NUMERO", position + 100) // Número ficticio
+                putExtra("ORIGEN", "ExpirationActivity") // Indicar que viene de ExpirationActivity
+            }
+            holder.itemView.context.startActivity(intent)
+        }
 
         // Configurar clics en los íconos
         holder.iconoPago.setOnClickListener {

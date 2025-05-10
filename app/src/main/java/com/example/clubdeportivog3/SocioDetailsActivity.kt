@@ -26,6 +26,7 @@ class SocioDetailsActivity : AppCompatActivity() {
         // Obtener datos del Intent
         val socioNombre = intent.getStringExtra("SOCIO_NOMBRE") ?: "Desconocido"
         val socioNumero = intent.getIntExtra("SOCIO_NUMERO", 123)
+        val origen = intent.getStringExtra("ORIGEN") ?: "SocioListActivity"
 
         // Referencias a los elementos del layout
         val btnVolver = findViewById<Button>(R.id.btnVolver)
@@ -52,7 +53,10 @@ class SocioDetailsActivity : AppCompatActivity() {
 
         // Botón Volver
         btnVolver.setOnClickListener {
-            val intent = Intent(this, SocioListActivity::class.java)
+            val intent = Intent(
+                this,
+                if (origen == "ExpirationActivity") ExpirationActivity::class.java else SocioListActivity::class.java
+            )
             startActivity(intent)
             finish()
         }
@@ -78,7 +82,7 @@ class SocioDetailsActivity : AppCompatActivity() {
             ActividadDeportiva("Vóley", "Entrenamiento en playa y gimnasio")
         )
 
-        // Configurar las tarjetas de actividades hardcoded
+        // Configurar las tarjetas de actividades
         val activityViews = listOf(
             findViewById<TextView>(R.id.tvNombreActividad1) to findViewById<Button>(R.id.btnRevocar1),
             findViewById<TextView>(R.id.tvNombreActividad2) to findViewById<Button>(R.id.btnRevocar2),
@@ -97,7 +101,6 @@ class SocioDetailsActivity : AppCompatActivity() {
                     btnRevocar.visibility = View.GONE
                 }
             } else {
-                // Ocultar tarjetas vacías
                 tvNombre.visibility = View.GONE
                 btnRevocar.visibility = View.GONE
             }
