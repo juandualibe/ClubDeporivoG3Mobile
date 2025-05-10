@@ -12,11 +12,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class SocioDetailsActivity : AppCompatActivity() {
+class NoSocioDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_socio_details)
+        setContentView(R.layout.activity_no_socio_details)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -24,26 +24,24 @@ class SocioDetailsActivity : AppCompatActivity() {
         }
 
         // Obtener datos del Intent
-        val socioNombre = intent.getStringExtra("SOCIO_NOMBRE") ?: "Desconocido"
-        val socioNumero = intent.getIntExtra("SOCIO_NUMERO", 123)
+        val noSocioNombre = intent.getStringExtra("NO_SOCIO_NOMBRE") ?: "Desconocido"
+        val noSocioNumero = intent.getIntExtra("NO_SOCIO_NUMERO", 123)
 
         // Referencias a los elementos del layout
         val btnVolver = findViewById<Button>(R.id.btnVolver)
         val tvSocioNumero = findViewById<TextView>(R.id.tvSocioNumero)
         val tvDetalles = findViewById<TextView>(R.id.tvDetalles)
-        val tvCuota = findViewById<TextView>(R.id.tvCuota)
         val tvEstadoPago = findViewById<TextView>(R.id.tvEstadoPago)
         val btnRegistrarPago = findViewById<Button>(R.id.btnRegistrarPago)
         val btnInscribirActividad = findViewById<Button>(R.id.btnInscribirActividad)
         val llActividades = findViewById<LinearLayout>(R.id.llActividades)
 
-        // Configurar información del socio
-        tvSocioNumero.text = "Socio N° $socioNumero"
-        tvDetalles.text = "Nombre: $socioNombre\nDNI: 12345678\nCorreo: $socioNombre@example.com"
-        tvCuota.text = "$ 15000"
+        // Configurar información del no socio
+        tvSocioNumero.text = "No Socio N° $noSocioNumero"
+        tvDetalles.text = "Nombre: $noSocioNombre\nDNI: 12345678\nCorreo: $noSocioNombre@example.com"
 
         // Configurar estado de pago (alternar según ejemplo)
-        val pagoPendiente = socioNumero % 2 == 0 // Números pares: pendiente
+        val pagoPendiente = noSocioNumero % 2 == 0 // Números pares: pendiente
         tvEstadoPago.text = if (pagoPendiente) "Pago pendiente" else "Pago realizado"
         tvEstadoPago.setTextColor(
             if (pagoPendiente) getColor(android.R.color.holo_red_dark)
@@ -52,21 +50,21 @@ class SocioDetailsActivity : AppCompatActivity() {
 
         // Botón Volver
         btnVolver.setOnClickListener {
-            val intent = Intent(this, SociosActivity::class.java)
+            val intent = Intent(this, NoSociosActivity::class.java)
             startActivity(intent)
             finish()
         }
 
         // Botón Registrar Pago
         btnRegistrarPago.setOnClickListener {
-            Toast.makeText(this, "Pago registrado para $socioNombre", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Pago registrado para $noSocioNombre", Toast.LENGTH_SHORT).show()
             tvEstadoPago.text = "Pago realizado"
             tvEstadoPago.setTextColor(getColor(android.R.color.holo_green_dark))
         }
 
         // Botón Inscribir en Actividad
         btnInscribirActividad.setOnClickListener {
-            Toast.makeText(this, "Inscribir a $socioNombre en actividad", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Inscribir a $noSocioNombre en actividad", Toast.LENGTH_SHORT).show()
         }
 
         // Lista ficticia de actividades

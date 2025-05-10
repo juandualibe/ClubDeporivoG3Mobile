@@ -8,10 +8,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdaptadorSocios(
-    private val listaSocios: List<String>,
-    private val onAccionSocio: (accion: String, socio: String) -> Unit
-) : RecyclerView.Adapter<AdaptadorSocios.ViewHolder>() {
+class AdaptadorNoSocios(
+    private val listaNoSocios: List<String>,
+    private val onAccionNoSocio: (accion: String, noSocio: String) -> Unit
+) : RecyclerView.Adapter<AdaptadorNoSocios.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val iconoSocio: ImageView = itemView.findViewById(R.id.iconoSocio)
@@ -27,26 +27,26 @@ class AdaptadorSocios(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val socio = listaSocios[position]
-        holder.textoSocio.text = socio
+        val noSocio = listaNoSocios[position]
+        holder.textoSocio.text = noSocio
 
-        // Abrir SocioDetailsActivity al hacer clic en el nombre
+        // Abrir NoSocioDetailsActivity al hacer clic en el nombre
         holder.textoSocio.setOnClickListener {
-            val intent = Intent(holder.itemView.context, SocioDetailsActivity::class.java).apply {
-                putExtra("SOCIO_NOMBRE", socio)
-                putExtra("SOCIO_NUMERO", position + 100) // Número ficticio
+            val intent = Intent(holder.itemView.context, NoSocioDetailsActivity::class.java).apply {
+                putExtra("NO_SOCIO_NOMBRE", noSocio)
+                putExtra("NO_SOCIO_NUMERO", position + 100) // Número ficticio
             }
             holder.itemView.context.startActivity(intent)
         }
 
         // Configurar clics en los íconos
         holder.iconoEditar.setOnClickListener {
-            onAccionSocio("editar", socio)
+            onAccionNoSocio("editar", noSocio)
         }
         holder.iconoEliminar.setOnClickListener {
-            onAccionSocio("eliminar", socio)
+            onAccionNoSocio("eliminar", noSocio)
         }
     }
 
-    override fun getItemCount(): Int = listaSocios.size
+    override fun getItemCount(): Int = listaNoSocios.size
 }

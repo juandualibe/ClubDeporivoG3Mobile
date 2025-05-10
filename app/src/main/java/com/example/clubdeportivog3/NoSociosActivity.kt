@@ -36,8 +36,8 @@ class NoSociosActivity : AppCompatActivity() {
             "Martín López"
         )
 
-        // Configurar adaptador (reutilizamos AdaptadorSocios)
-        val adaptadorNoSocios = AdaptadorSocios(listaNoSocios) { accion, noSocio ->
+        // Configurar adaptador
+        val adaptadorNoSocios = AdaptadorNoSocios(listaNoSocios) { accion, noSocio ->
             when (accion) {
                 "editar" -> {
                     val intent = Intent(this, ModificarNoSociosActivity::class.java)
