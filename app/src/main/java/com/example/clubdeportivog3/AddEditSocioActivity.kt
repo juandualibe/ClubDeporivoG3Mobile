@@ -3,6 +3,8 @@ package com.example.clubdeportivog3
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CheckBox
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,18 +22,46 @@ class AddEditSocioActivity : AppCompatActivity() {
             insets
         }
 
-        // Botón Volver
+        // Referencias a los elementos del layout
+        val editNombre = findViewById<EditText>(R.id.editNombre)
+        val editApellido = findViewById<EditText>(R.id.editApellido)
+        val editDni = findViewById<EditText>(R.id.editDni)
+        val editCorreo = findViewById<EditText>(R.id.editCorreo)
+        val editTelefono = findViewById<EditText>(R.id.editTelefono)
+        val editCuota = findViewById<EditText>(R.id.editCuota)
+        val checkAptoFisico = findViewById<CheckBox>(R.id.checkAptoFisico)
+        val checkCarnetEntregado = findViewById<CheckBox>(R.id.checkCarnetEntregado)
+        val checkPagoAlDia = findViewById<CheckBox>(R.id.checkPagoAlDia)
+        val btnConfirmar = findViewById<Button>(R.id.btnConfirmar)
         val btnVolver = findViewById<Button>(R.id.btnVolver)
+
+        // Botón Volver
         btnVolver.setOnClickListener {
             val intent = Intent(this, SocioListActivity::class.java)
             startActivity(intent)
-            finish() // Cierra ModificarSociosActivity
+            finish() // Cierra AddEditSocioActivity
         }
 
-        // Botón Confirmar (placeholder)
-        val btnConfirmar = findViewById<Button>(R.id.btnConfirmar)
+        // Botón Confirmar
         btnConfirmar.setOnClickListener {
-            Toast.makeText(this, "Confirmar cambios", Toast.LENGTH_SHORT).show()
+            val nombre = editNombre.text.toString()
+            val apellido = editApellido.text.toString()
+            val dni = editDni.text.toString()
+            val correo = editCorreo.text.toString()
+            val telefono = editTelefono.text.toString()
+            val cuota = editCuota.text.toString().toDoubleOrNull() ?: 0.0
+            val aptoFisico = checkAptoFisico.isChecked
+            val carnetEntregado = checkCarnetEntregado.isChecked
+            val pagoAlDia = checkPagoAlDia.isChecked
+
+            if (nombre.isEmpty() || apellido.isEmpty() || dni.isEmpty()) {
+                Toast.makeText(this, "Por favor, completa los campos obligatorios", Toast.LENGTH_SHORT).show()
+            } else {
+                // Abrir AddedEditedSocioActivity
+                val intent = Intent(this, AddedEditedSocioActivity::class.java)
+                startActivity(intent)
+                finish() // Cierra AddEditSocioActivity
+            }
         }
     }
 }
