@@ -40,8 +40,8 @@ class NoSocioDetailsActivity : AppCompatActivity() {
         tvSocioNumero.text = "No Socio N° $noSocioNumero"
         tvDetalles.text = "Nombre: $noSocioNombre\nDNI: 12345678\nCorreo: $noSocioNombre@example.com"
 
-        // Configurar estado de pago (alternar según ejemplo)
-        val pagoPendiente = noSocioNumero % 2 == 0 // Números pares: pendiente
+        // Configurar estado de pago
+        val pagoPendiente = noSocioNumero % 2 == 0
         tvEstadoPago.text = if (pagoPendiente) "Pago pendiente" else "Pago realizado"
         tvEstadoPago.setTextColor(
             if (pagoPendiente) getColor(android.R.color.holo_red_dark)
@@ -64,7 +64,11 @@ class NoSocioDetailsActivity : AppCompatActivity() {
 
         // Botón Inscribir en Actividad
         btnInscribirActividad.setOnClickListener {
-            Toast.makeText(this, "Inscribir a $noSocioNombre en actividad", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RegisterInActivityNoSocioActivity::class.java).apply {
+                putExtra("no_socio_numero", noSocioNumero)
+                putExtra("no_socio_nombre", noSocioNombre)
+            }
+            startActivity(intent)
         }
 
         // Lista ficticia de actividades
@@ -76,7 +80,7 @@ class NoSocioDetailsActivity : AppCompatActivity() {
             ActividadDeportiva("Vóley", "Entrenamiento en playa y gimnasio")
         )
 
-        // Configurar las tarjetas de actividades hardcoded
+        // Configurar las tarjetas de actividades
         val activityViews = listOf(
             findViewById<TextView>(R.id.tvNombreActividad1) to findViewById<Button>(R.id.btnRevocar1),
             findViewById<TextView>(R.id.tvNombreActividad2) to findViewById<Button>(R.id.btnRevocar2),
@@ -95,7 +99,6 @@ class NoSocioDetailsActivity : AppCompatActivity() {
                     btnRevocar.visibility = View.GONE
                 }
             } else {
-                // Ocultar tarjetas vacías
                 tvNombre.visibility = View.GONE
                 btnRevocar.visibility = View.GONE
             }

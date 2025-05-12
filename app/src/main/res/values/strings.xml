@@ -133,4 +133,8 @@
     <!-- Registro en actividades -->
     <string name="register_in_activity">Inscribir en Actividad</string>
     <string name="register">Inscribir</string>
+    <string name="register_in_activity_no_socio" />
+
+    <!-- Recurso para el contentDescription del RecyclerView -->
+    <string name="activity_list_description">Lista de actividades disponibles para inscripción</string>
 </resources>
