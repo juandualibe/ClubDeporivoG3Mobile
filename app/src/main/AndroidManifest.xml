@@ -57,6 +57,15 @@
         <activity
             android:name=".ActividadesListActivity"
             android:exported="false" />
+        <activity
+            android:name="com.example.clubdeportivog3.AddedEditedActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.clubdeportivog3.AddedEditedSocioActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.clubdeportivog3.AddedEditedNoSocioActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
