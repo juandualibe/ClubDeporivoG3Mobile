@@ -32,14 +32,15 @@ class AdaptadorActividades(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val actividad = listaActividades[position]
         holder.textoNombre.text = actividad.nombre
-        holder.textoDescripcion.text = actividad.descripcion
+        holder.textoDescripcion.text = "${actividad.descripcion}\nCupo: ${actividad.cupoMaximo}"
 
         // Navegar a ActividadDetailsActivity al hacer clic en el contenedor de texto
         holder.contenedorTexto.setOnClickListener {
             val intent = Intent(holder.itemView.context, ActividadDetailsActivity::class.java).apply {
+                putExtra("ACTIVIDAD_ID", actividad.id)
                 putExtra("ACTIVIDAD_NOMBRE", actividad.nombre)
                 putExtra("ACTIVIDAD_DESCRIPCION", actividad.descripcion)
-                putExtra("ACTIVIDAD_NUMERO", position + 1) // Número ficticio
+                putExtra("ACTIVIDAD_NUMERO", actividad.id) // Usar id en lugar de position
             }
             holder.itemView.context.startActivity(intent)
         }

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Nombre App -->
     <string name="app_name">ClubDeportivoG3</string>
 
@@ -130,4 +130,7 @@
     <!-- Otros -->
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti.</string>
 
+    <!-- Registro en actividades -->
+    <string name="register_in_activity">Inscribir en Actividad</string>
+    <string name="register">Inscribir</string>
 </resources>

@@ -43,8 +43,8 @@ class SocioDetailsActivity : AppCompatActivity() {
         tvDetalles.text = "Nombre: $socioNombre\nDNI: 12345678\nCorreo: $socioNombre@example.com"
         tvCuota.text = "$ 15000"
 
-        // Configurar estado de pago (alternar según ejemplo)
-        val pagoPendiente = socioNumero % 2 == 0 // Números pares: pendiente
+        // Configurar estado de pago
+        val pagoPendiente = socioNumero % 2 == 0
         tvEstadoPago.text = if (pagoPendiente) "Pago pendiente" else "Pago realizado"
         tvEstadoPago.setTextColor(
             if (pagoPendiente) getColor(android.R.color.holo_red_dark)
@@ -70,7 +70,11 @@ class SocioDetailsActivity : AppCompatActivity() {
 
         // Botón Inscribir en Actividad
         btnInscribirActividad.setOnClickListener {
-            Toast.makeText(this, "Inscribir a $socioNombre en actividad", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RegisterInActivityActivity::class.java).apply {
+                putExtra("socio_id", socioNumero)
+                putExtra("socio_nombre", socioNombre)
+            }
+            startActivity(intent)
         }
 
         // Lista ficticia de actividades

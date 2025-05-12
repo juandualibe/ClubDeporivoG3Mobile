@@ -26,14 +26,14 @@ class ActividadesListActivity : AppCompatActivity() {
         val recyclerViewActividades = findViewById<RecyclerView>(R.id.recyclerViewActividades)
         recyclerViewActividades.layoutManager = LinearLayoutManager(this)
 
-        // Lista de actividades ficticia con descripciones y nuevos campos
+        // Lista de actividades ficticia con id
         val listaActividades = listOf(
-            ActividadDeportiva("Fútbol", "Partidos semanales en cancha sintética", "Lunes 18:00-20:00", 15000.0, 20, "Lunes"),
-            ActividadDeportiva("Básquet", "Entrenamiento y torneos locales", "Miércoles 19:00-21:00", 12000.0, 15, "Miércoles"),
-            ActividadDeportiva("Natación", "Clases para todas las edades", "Viernes 17:00-18:30", 18000.0, 10, "Viernes"),
-            ActividadDeportiva("Yoga", "Sesiones de relajación y estiramiento", "Martes 08:00-09:30", 10000.0, 12, "Martes"),
-            ActividadDeportiva("Tenis", "Canchas disponibles para práctica", "Jueves 16:00-18:00", 20000.0, 8, "Jueves"),
-            ActividadDeportiva("Vóley", "Entrenamiento en playa y gimnasio", "Sábado 10:00-12:00", 13000.0, 16, "Sábado")
+            ActividadDeportiva(1, "Fútbol", "Partidos semanales en cancha sintética", "Lunes 18:00-20:00", 15000.0, 20, "Lunes"),
+            ActividadDeportiva(2, "Básquet", "Entrenamiento y torneos locales", "Miércoles 19:00-21:00", 12000.0, 15, "Miércoles"),
+            ActividadDeportiva(3, "Natación", "Clases para todas las edades", "Viernes 17:00-18:30", 18000.0, 10, "Viernes"),
+            ActividadDeportiva(4, "Yoga", "Sesiones de relajación y estiramiento", "Martes 08:00-09:30", 10000.0, 12, "Martes"),
+            ActividadDeportiva(5, "Tenis", "Canchas disponibles para práctica", "Jueves 16:00-18:00", 20000.0, 8, "Jueves"),
+            ActividadDeportiva(6, "Vóley", "Entrenamiento en playa y gimnasio", "Sábado 10:00-12:00", 13000.0, 16, "Sábado")
         )
 
         // Configurar adaptador
@@ -41,6 +41,7 @@ class ActividadesListActivity : AppCompatActivity() {
             when (accion) {
                 "editar" -> {
                     val intent = Intent(this, AddEditActividadActivity::class.java).apply {
+                        putExtra("ACTIVIDAD_ID", actividad.id)
                         putExtra("ACTIVIDAD_NOMBRE", actividad.nombre)
                         putExtra("ACTIVIDAD_DESCRIPCION", actividad.descripcion)
                         putExtra("ACTIVIDAD_HORARIO", actividad.horario)
@@ -70,7 +71,7 @@ class ActividadesListActivity : AppCompatActivity() {
         btnVolver.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
-            finish() // Cierra ActividadesActivity
+            finish()
         }
     }
 }
