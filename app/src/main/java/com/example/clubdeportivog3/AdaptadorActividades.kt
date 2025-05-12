@@ -15,7 +15,7 @@ class AdaptadorActividades(
 ) : RecyclerView.Adapter<AdaptadorActividades.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val iconoActividad: ImageView = itemView.findViewById(R.id.iconoActividad)
+        // --Commented out by Inspection (12/5/2025 17:26):val iconoActividad: ImageView = itemView.findViewById(R.id.iconoActividad)
         val textoNombre: TextView = itemView.findViewById(R.id.textoNombre)
         val textoDescripcion: TextView = itemView.findViewById(R.id.textoDescripcion)
         val iconoEditar: ImageView = itemView.findViewById(R.id.iconoEditar)

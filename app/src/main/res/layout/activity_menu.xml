@@ -7,9 +7,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
+    android:gravity="center_horizontal"
     tools:context=".MenuActivity">
 
-    <!-- LinearLayout para el botón Volver y el título -->
+    <!-- LinearLayout para el título -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,8 +18,6 @@
         android:gravity="center_vertical"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp">
-
-        <!-- Botón Volver -->
 
         <!-- Título -->
         <TextView
@@ -35,50 +34,63 @@
     </LinearLayout>
 
     <!-- Botón Socios -->
-
-    <!-- Botón No Socios -->
-
     <Button
         android:id="@+id/btnSocios"
-        android:layout_width="205dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="137dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/button_background"
         android:elevation="0dp"
+        android:minWidth="200dp"
+        android:minHeight="100dp"
         android:outlineProvider="none"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="30dp"
         android:stateListAnimator="@null"
         android:text="@string/socios"
+        android:textSize="20sp"
         android:translationZ="0dp" />
+
+    <!-- Botón No Socios -->
+
+    <!-- Botón Actividades -->
 
     <Button
         android:id="@+id/btnNoSocios"
-        android:layout_width="205dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="137dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_background"
         android:elevation="0dp"
+        android:minWidth="200dp"
+        android:minHeight="100dp"
         android:outlineProvider="none"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="30dp"
         android:stateListAnimator="@null"
         android:text="@string/no_socios"
-        android:translationZ="0dp" />
-
-    <!-- Botón Actividades -->
-    <Button
-        android:id="@+id/btnActividades3"
-        android:layout_width="205dp"
-        android:layout_height="124dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/button_background"
-        android:elevation="0dp"
-        android:outlineProvider="none"
-        android:stateListAnimator="@null"
-        android:text="@string/actividades"
+        android:textSize="20sp"
         android:translationZ="0dp" />
 
     <!-- Espacio flexible para empujar el botón Salir hacia abajo -->
+
+    <Button
+        android:id="@+id/btnActividades3"
+        android:layout_width="wrap_content"
+        android:layout_height="137dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/button_background"
+        android:elevation="0dp"
+        android:minWidth="200dp"
+        android:minHeight="100dp"
+        android:outlineProvider="none"
+        android:paddingHorizontal="40dp"
+        android:paddingVertical="30dp"
+        android:stateListAnimator="@null"
+        android:text="@string/actividades"
+        android:textSize="20sp"
+        android:translationZ="0dp" />
+
     <Space
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -93,14 +105,19 @@
 
         <Button
             android:id="@+id/btnSalir"
-            android:layout_width="99dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="100dp"
+            android:minHeight="60dp"
+            android:paddingVertical="16dp"
+            android:paddingHorizontal="20dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/button_background"
             android:elevation="0dp"
             android:outlineProvider="none"
             android:stateListAnimator="@null"
             android:text="@string/exit"
+            android:textSize="16sp"
             android:translationZ="0dp" />
     </LinearLayout>
 
