@@ -1,5 +1,6 @@
 package com.example.clubdeportivog3
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -44,7 +45,7 @@ class SocioDetailsActivity : AppCompatActivity() {
         tvCuota.text = "$ 15000"
 
         // Configurar estado de pago
-        val pagoPendiente = socioNumero % 2 == 0
+        var pagoPendiente = socioNumero % 2 == 0 // Usamos var para permitir cambios
         tvEstadoPago.text = if (pagoPendiente) "Pago pendiente" else "Pago realizado"
         tvEstadoPago.setTextColor(
             if (pagoPendiente) getColor(android.R.color.holo_red_dark)
@@ -63,15 +64,30 @@ class SocioDetailsActivity : AppCompatActivity() {
 
         // Botón Registrar Pago
         btnRegistrarPago.setOnClickListener {
-            Toast.makeText(this, "Pago registrado para $socioNombre", Toast.LENGTH_SHORT).show()
-            tvEstadoPago.text = "Pago realizado"
-            tvEstadoPago.setTextColor(getColor(android.R.color.holo_green_dark))
+            AlertDialog.Builder(this)
+                .setMessage("¿Está seguro que desea registrar un pago a este socio?")
+                .setNegativeButton("No") { _, _ ->
+                    // No hacer nada, permanecer en SocioDetailsActivity
+                }
+                .setPositiveButton("Sí") { _, _ ->
+                    // Actualizar estado de pago
+                    pagoPendiente = false
+                    tvEstadoPago.text = "Pago realizado"
+                    tvEstadoPago.setTextColor(getColor(android.R.color.holo_green_dark))
+
+                    // Navegar a PaymentRegisteredActivity
+                    val intent = Intent(this, PaymentRegisteredActivity::class.java)
+                    startActivity(intent)
+                    finish() // Cierra SocioDetailsActivity
+                }
+                .setCancelable(true)
+                .show()
         }
 
         // Botón Inscribir en Actividad
         btnInscribirActividad.setOnClickListener {
             val intent = Intent(this, RegisterInActivityActivity::class.java).apply {
-                putExtra("socio_numero", socioNumero) // Cambiado de socio_id a socio_numero para consistencia
+                putExtra("socio_numero", socioNumero)
                 putExtra("socio_nombre", socioNombre)
             }
             startActivity(intent)

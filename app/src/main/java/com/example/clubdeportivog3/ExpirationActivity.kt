@@ -37,8 +37,12 @@ class ExpirationActivity : AppCompatActivity() {
         // Configurar adaptador
         val adaptadorVencimientos = AdaptadorVencimientos(listaVencimientos) { accion, socio ->
             when (accion) {
-                "pago" -> Toast.makeText(this, "Registrar pago: $socio", Toast.LENGTH_SHORT).show()
-                "eliminar" -> Toast.makeText(this, "Eliminar: $socio", Toast.LENGTH_SHORT).show()
+                "pago" -> {
+                    // No es necesario manejar el pago aquí, ya que se maneja en AdaptadorVencimientos
+                }
+                "eliminar" -> {
+                    // No es necesario manejar la eliminación aquí, ya que se maneja en AdaptadorVencimientos
+                }
             }
         }
         recyclerViewVencimientos.adapter = adaptadorVencimientos
@@ -48,7 +52,7 @@ class ExpirationActivity : AppCompatActivity() {
         btnVolver.setOnClickListener {
             val intent = Intent(this, SocioListActivity::class.java)
             startActivity(intent)
-            finish() // Cierra VencimientosActivity
+            finish() // Cierra ExpirationActivity
         }
     }
 }

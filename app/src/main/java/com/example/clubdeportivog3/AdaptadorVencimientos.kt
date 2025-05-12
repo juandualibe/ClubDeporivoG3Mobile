@@ -1,5 +1,6 @@
 package com.example.clubdeportivog3
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -42,10 +43,32 @@ class AdaptadorVencimientos(
 
         // Configurar clics en los íconos
         holder.iconoPago.setOnClickListener {
-            onAccionVencimiento("pago", socio)
+            AlertDialog.Builder(holder.itemView.context)
+                .setMessage("¿Está seguro que desea registrar un pago a este socio?")
+                .setNegativeButton("No") { _, _ ->
+                    // No hacer nada, se queda en ExpirationActivity
+                }
+                .setPositiveButton("Sí") { _, _ ->
+                    // Navegar a PaymentRegisteredActivity
+                    val intent = Intent(holder.itemView.context, PaymentRegisteredActivity::class.java)
+                    holder.itemView.context.startActivity(intent)
+                }
+                .setCancelable(true)
+                .show()
         }
         holder.iconoEliminar.setOnClickListener {
-            onAccionVencimiento("eliminar", socio)
+            AlertDialog.Builder(holder.itemView.context)
+                .setMessage("¿Está seguro que desea eliminar este socio?")
+                .setNegativeButton("No") { _, _ ->
+                    // No hacer nada, se queda en ExpirationActivity
+                }
+                .setPositiveButton("Sí") { _, _ ->
+                    // Navegar a DeletedSocioActivity
+                    val intent = Intent(holder.itemView.context, DeletedSocioActivity::class.java)
+                    holder.itemView.context.startActivity(intent)
+                }
+                .setCancelable(true)
+                .show()
         }
     }
 

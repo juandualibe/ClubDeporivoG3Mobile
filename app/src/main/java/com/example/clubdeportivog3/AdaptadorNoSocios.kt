@@ -1,5 +1,6 @@
 package com.example.clubdeportivog3
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -44,7 +45,18 @@ class AdaptadorNoSocios(
             onAccionNoSocio("editar", noSocio)
         }
         holder.iconoEliminar.setOnClickListener {
-            onAccionNoSocio("eliminar", noSocio)
+            AlertDialog.Builder(holder.itemView.context)
+                .setMessage("¿Está seguro que desea eliminar este no socio?")
+                .setNegativeButton("No") { _, _ ->
+                    // No hacer nada, se queda en NoSocioListActivity
+                }
+                .setPositiveButton("Sí") { _, _ ->
+                    // Navegar a DeletedNoSocioActivity
+                    val intent = Intent(holder.itemView.context, DeletedNoSocioActivity::class.java)
+                    holder.itemView.context.startActivity(intent)
+                }
+                .setCancelable(true)
+                .show()
         }
     }
 

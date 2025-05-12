@@ -1,5 +1,6 @@
 package com.example.clubdeportivog3
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -44,7 +45,18 @@ class AdaptadorSocios(
             onAccionSocio("editar", socio)
         }
         holder.iconoEliminar.setOnClickListener {
-            onAccionSocio("eliminar", socio)
+            AlertDialog.Builder(holder.itemView.context)
+                .setMessage("¿Está seguro que desea eliminar este socio?")
+                .setNegativeButton("No") { _, _ ->
+                    // No hacer nada, se queda en SocioListActivity
+                }
+                .setPositiveButton("Sí") { _, _ ->
+                    // Navegar a DeletedSocioActivity
+                    val intent = Intent(holder.itemView.context, DeletedSocioActivity::class.java)
+                    holder.itemView.context.startActivity(intent)
+                }
+                .setCancelable(true)
+                .show()
         }
     }
 
