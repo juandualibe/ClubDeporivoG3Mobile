@@ -9,7 +9,8 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="#F5FAFF"
-    tools:context=".AddedEditedSocioActivity">
+    android:padding="20dp"
+    tools:context=".AddEditSocioActivity">
 
     <!-- Imagen de confirmación -->
     <ImageView
@@ -17,16 +18,16 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="100dp"
-        android:contentDescription="Icono de confirmación"
+        android:contentDescription="@string/confirmation_icon"
         app:srcCompat="@drawable/icono_check" />
 
     <!-- Texto "Socio Añadido/Editado" -->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="271dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Socio Añadido/Editado"
+        android:text="@string/added_edited_socio"
         android:textAlignment="center"
         android:textColor="#3F51B5"
         android:textSize="34sp"
@@ -39,8 +40,7 @@
         android:layout_height="62dp"
         android:layout_marginTop="48dp"
         android:background="@drawable/button_background"
-        android:text="Aceptar"
-        android:textColor="#FFFFFF"
-        android:contentDescription="Aceptar confirmación" />
+        android:text="@string/accept"
+        android:textColor="#FFFFFF" />
 
 </LinearLayout>

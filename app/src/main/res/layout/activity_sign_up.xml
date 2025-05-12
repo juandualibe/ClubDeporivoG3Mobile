@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
+    android:gravity="center"
     android:padding="24dp"
     tools:context=".SignUpActivity">
 
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:fontFamily="sans-serif"
-        android:text="¡Bienvenido! Crea tu cuenta ahora"
+        android:text="@string/registration_title"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -29,9 +29,9 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="64dp"
-        android:ems="10"
-        android:hint="Ingresá tu correo electrónico."
+        android:layout_marginTop="32dp"
+        android:autofillHints="emailAddress"
+        android:hint="@string/enter_email"
         android:inputType="textEmailAddress" />
 
     <!-- Campo de contraseña -->
@@ -40,9 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Ingresá tu contraseña."
+        android:layout_marginTop="32dp"
+        android:autofillHints="password"
+        android:hint="@string/enter_password"
         android:inputType="textPassword" />
 
     <!-- Campo de confirmación de contraseña -->
@@ -51,9 +51,9 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="36dp"
-        android:ems="10"
-        android:hint="Ingresá tu contraseña nuevamente."
+        android:layout_marginTop="32dp"
+        android:autofillHints="password"
+        android:hint="@string/enter_password_again"
         android:inputType="textPassword" />
 
     <!-- Botón Registrar -->
@@ -63,7 +63,7 @@
         android:layout_height="73dp"
         android:layout_marginTop="56dp"
         android:fontFamily="serif"
-        android:text="Registrar"
+        android:text="@string/registration"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="24sp"
         android:typeface="normal"
@@ -75,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:text="¿Ya tienes una cuenta? Ingresar"
+        android:text="@string/log_in_if_account"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="16sp" />
 

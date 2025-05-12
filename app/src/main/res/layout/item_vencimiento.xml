@@ -14,7 +14,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@android:drawable/ic_menu_myplaces"
-        android:contentDescription="Socio"
+        android:contentDescription="@string/socio"
         android:layout_marginEnd="8dp"
         android:layout_gravity="center_vertical" />
 
@@ -35,9 +35,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginEnd="8dp"
-        android:contentDescription="Registrar pago"
+        android:contentDescription="@string/register_payment"
         android:gravity="center"
-        android:text="$"
+        android:text="@string/currency_symbol"
         android:textSize="18sp" />
 
     <!-- Ícono de eliminar -->
@@ -46,7 +46,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@android:drawable/ic_menu_delete"
-        android:contentDescription="Eliminar"
+        android:contentDescription="@string/delete"
         android:layout_gravity="center_vertical" />
 
 </LinearLayout>

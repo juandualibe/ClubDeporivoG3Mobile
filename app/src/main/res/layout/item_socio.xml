@@ -14,7 +14,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@android:drawable/ic_menu_myplaces"
-        android:contentDescription="Socio"
+        android:contentDescription="@string/socio"
         android:layout_marginEnd="8dp"
         android:layout_gravity="center_vertical" />
 
@@ -34,7 +34,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@android:drawable/ic_menu_edit"
-        android:contentDescription="Editar"
+        android:contentDescription="@string/edit"
         android:layout_marginEnd="8dp"
         android:layout_gravity="center_vertical" />
 
@@ -44,7 +44,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:src="@android:drawable/ic_menu_delete"
-        android:contentDescription="Eliminar"
+        android:contentDescription="@string/delete"
         android:layout_gravity="center_vertical" />
 
 </LinearLayout>

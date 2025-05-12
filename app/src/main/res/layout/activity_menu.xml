@@ -23,11 +23,11 @@
         <!-- Título -->
         <TextView
             android:id="@+id/textViewTitulo"
-            android:layout_width="187dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="sans-serif"
-            android:text="Menú de Usuario"
+            android:text="@string/user_menu"
             android:textAlignment="center"
             android:textSize="26sp"
             android:textStyle="bold" />
@@ -45,11 +45,10 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/button_background"
-        android:clipToOutline="false"
         android:elevation="0dp"
         android:outlineProvider="none"
         android:stateListAnimator="@null"
-        android:text="Socios"
+        android:text="@string/socios"
         android:translationZ="0dp" />
 
     <Button
@@ -59,11 +58,10 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_background"
-        android:clipToOutline="false"
         android:elevation="0dp"
         android:outlineProvider="none"
         android:stateListAnimator="@null"
-        android:text="No Socios"
+        android:text="@string/no_socios"
         android:translationZ="0dp" />
 
     <!-- Botón Actividades -->
@@ -74,11 +72,10 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/button_background"
-        android:clipToOutline="false"
         android:elevation="0dp"
         android:outlineProvider="none"
         android:stateListAnimator="@null"
-        android:text="Actividades"
+        android:text="@string/actividades"
         android:translationZ="0dp" />
 
     <!-- Espacio flexible para empujar el botón Salir hacia abajo -->
@@ -100,11 +97,10 @@
             android:layout_height="48dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/button_background"
-            android:clipToOutline="false"
             android:elevation="0dp"
             android:outlineProvider="none"
             android:stateListAnimator="@null"
-            android:text="Salir"
+            android:text="@string/exit"
             android:translationZ="0dp" />
     </LinearLayout>
 

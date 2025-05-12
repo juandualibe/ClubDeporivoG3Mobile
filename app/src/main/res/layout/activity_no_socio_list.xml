@@ -23,10 +23,8 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@android:drawable/ic_menu_revert"
-            android:contentDescription="Volver al menú"
+            android:contentDescription="@string/back_arrow"
             android:gravity="center"
-            android:text="←"
-            android:textSize="24sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,7 +33,7 @@
             android:id="@+id/textoTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lista de No Socios"
+            android:text="@string/no_socio_list"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +50,7 @@
         android:layout_weight="1"
         android:layout_marginTop="8dp"
         android:paddingBottom="64dp"
-        android:contentDescription="Lista de no socios" />
+        android:contentDescription="@string/no_socio_list" />
 
     <!-- LinearLayout para botón fijo en la parte inferior -->
     <LinearLayout
@@ -71,7 +69,7 @@
             android:layout_height="48dp"
             android:background="@android:drawable/ic_menu_add"
             android:gravity="center"
-            android:text="+"
+            android:contentDescription="@string/add"
             android:textSize="24sp" />
     </LinearLayout>
 
