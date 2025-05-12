@@ -137,4 +137,7 @@
 
     <!-- Recurso para el contentDescription del RecyclerView -->
     <string name="activity_list_description">Lista de actividades disponibles para inscripción</string>
+
+    <!-- Nuevos recursos para PaymentRegisteredAndInscriptionActivity -->
+    <string name="registered_payment_and_register">Pago registrado e inscripción realizada</string>
 </resources>
