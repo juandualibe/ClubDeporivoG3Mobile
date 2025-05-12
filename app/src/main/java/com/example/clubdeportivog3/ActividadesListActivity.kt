@@ -1,9 +1,9 @@
 package com.example.clubdeportivog3
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -52,7 +52,21 @@ class ActividadesListActivity : AppCompatActivity() {
                     }
                     startActivity(intent)
                 }
-                "eliminar" -> Toast.makeText(this, "Eliminar: ${actividad.nombre}", Toast.LENGTH_SHORT).show()
+                "eliminar" -> {
+                    AlertDialog.Builder(this)
+                        .setMessage("¿Está seguro que desea eliminar esta actividad?")
+                        .setNegativeButton("No") { _, _ ->
+                            // No hacer nada, permanecer en ActividadesListActivity
+                        }
+                        .setPositiveButton("Sí") { _, _ ->
+                            // Navegar a DeletedActivity
+                            val intent = Intent(this, DeletedActivity::class.java)
+                            startActivity(intent)
+                            // No cerramos ActividadesListActivity para permitir volver atrás
+                        }
+                        .setCancelable(true)
+                        .show()
+                }
             }
         }
         recyclerViewActividades.adapter = adaptadorActividades

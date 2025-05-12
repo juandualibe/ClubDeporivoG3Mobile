@@ -140,4 +140,7 @@
 
     <!-- Nuevos recursos para PaymentRegisteredAndInscriptionActivity -->
     <string name="registered_payment_and_register">Pago registrado e inscripción realizada</string>
+
+    <!-- Nuevos recursos para DeletedActivity -->
+    <string name="deleted_activity">Actividad Eliminada</string>
 </resources>
