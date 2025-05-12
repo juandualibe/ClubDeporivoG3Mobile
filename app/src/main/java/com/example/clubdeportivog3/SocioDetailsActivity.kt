@@ -116,9 +116,23 @@ class SocioDetailsActivity : AppCompatActivity() {
                 val actividad = listaActividades[index]
                 tvNombre.text = "${actividad.nombre}\n${actividad.descripcion}"
                 btnRevocar.setOnClickListener {
-                    Toast.makeText(this, "Revocar inscripción en ${actividad.nombre}", Toast.LENGTH_SHORT).show()
-                    tvNombre.text = "Inscripción revocada"
-                    btnRevocar.visibility = View.GONE
+                    AlertDialog.Builder(this)
+                        .setMessage("¿Está seguro que desea revocar la inscripción del socio en esta actividad?")
+                        .setNegativeButton("No") { _, _ ->
+                            // No hacer nada, permanecer en SocioDetailsActivity
+                        }
+                        .setPositiveButton("Sí") { _, _ ->
+                            // Actualizar UI
+                            tvNombre.text = "Inscripción revocada"
+                            btnRevocar.visibility = View.GONE
+
+                            // Navegar a DeletedInscriptionActivity
+                            val intent = Intent(this, DeletedInscriptionActivity::class.java)
+                            startActivity(intent)
+                            finish() // Cierra SocioDetailsActivity
+                        }
+                        .setCancelable(true)
+                        .show()
                 }
             } else {
                 tvNombre.visibility = View.GONE
