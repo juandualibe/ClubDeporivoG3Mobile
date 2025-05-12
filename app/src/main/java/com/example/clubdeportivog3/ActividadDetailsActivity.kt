@@ -32,7 +32,7 @@ class ActividadDetailsActivity : AppCompatActivity() {
         val btnVolver = findViewById<Button>(R.id.btnVolver)
         val tvActividadNumero = findViewById<TextView>(R.id.tvActividadNumero)
         val tvDetalles = findViewById<TextView>(R.id.tvDetalles)
-        val tvInscriptos = findViewById<TextView>(R.id.tvInscriptos)
+        val tvInscriptos = findViewById<TextView>(R.id.tvNombreInscripto5)
         val llInscriptos = findViewById<LinearLayout>(R.id.llInscriptos)
 
         // Configurar información de la actividad
