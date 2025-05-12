@@ -70,8 +70,8 @@ class SocioDetailsActivity : AppCompatActivity() {
 
         // Botón Inscribir en Actividad
         btnInscribirActividad.setOnClickListener {
-            val intent = Intent(this, RegisterInActivitySocioActivity::class.java).apply {
-                putExtra("socio_id", socioNumero)
+            val intent = Intent(this, RegisterInActivityActivity::class.java).apply {
+                putExtra("socio_numero", socioNumero) // Cambiado de socio_id a socio_numero para consistencia
                 putExtra("socio_nombre", socioNombre)
             }
             startActivity(intent)
