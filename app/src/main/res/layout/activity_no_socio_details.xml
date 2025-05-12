@@ -86,43 +86,6 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Daily Fee Section -->
-        <TextView
-            android:id="@+id/tvCuotaLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/daily_payment_title"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/tvCuota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/daily_payment_amount"
-            android:textSize="18sp"
-            android:textColor="#000000"
-            android:layout_marginBottom="4dp"/>
-
-        <TextView
-            android:id="@+id/tvEstadoPago"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/payment_pending"
-            android:textSize="14sp"
-            android:textColor="#FF0000"
-            android:layout_marginBottom="8dp"/>
-
-        <Button
-            android:id="@+id/btnRegistrarPago"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/register_payment"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"/>
-
         <!-- Activities List Section -->
         <TextView
             android:id="@+id/tvActividadesLabel"

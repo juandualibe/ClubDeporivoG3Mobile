@@ -31,8 +31,6 @@ class NoSocioDetailsActivity : AppCompatActivity() {
         val btnVolver = findViewById<Button>(R.id.btnVolver)
         val tvSocioNumero = findViewById<TextView>(R.id.tvSocioNumero)
         val tvDetalles = findViewById<TextView>(R.id.tvDetalles)
-        val tvEstadoPago = findViewById<TextView>(R.id.tvEstadoPago)
-        val btnRegistrarPago = findViewById<Button>(R.id.btnRegistrarPago)
         val btnInscribirActividad = findViewById<Button>(R.id.btnInscribirActividad)
         val llActividades = findViewById<LinearLayout>(R.id.llActividades)
 
@@ -40,26 +38,11 @@ class NoSocioDetailsActivity : AppCompatActivity() {
         tvSocioNumero.text = "No Socio N° $noSocioNumero"
         tvDetalles.text = "Nombre: $noSocioNombre\nDNI: 12345678\nCorreo: $noSocioNombre@example.com"
 
-        // Configurar estado de pago
-        val pagoPendiente = noSocioNumero % 2 == 0
-        tvEstadoPago.text = if (pagoPendiente) "Pago pendiente" else "Pago realizado"
-        tvEstadoPago.setTextColor(
-            if (pagoPendiente) getColor(android.R.color.holo_red_dark)
-            else getColor(android.R.color.holo_green_dark)
-        )
-
         // Botón Volver
         btnVolver.setOnClickListener {
             val intent = Intent(this, NoSocioListActivity::class.java)
             startActivity(intent)
             finish()
-        }
-
-        // Botón Registrar Pago
-        btnRegistrarPago.setOnClickListener {
-            Toast.makeText(this, "Pago registrado para $noSocioNombre", Toast.LENGTH_SHORT).show()
-            tvEstadoPago.text = "Pago realizado"
-            tvEstadoPago.setTextColor(getColor(android.R.color.holo_green_dark))
         }
 
         // Botón Inscribir en Actividad
@@ -73,11 +56,11 @@ class NoSocioDetailsActivity : AppCompatActivity() {
 
         // Lista ficticia de actividades
         val listaActividades = listOf(
-            ActividadDeportiva("Fútbol", "Partidos semanales en cancha sintética"),
-            ActividadDeportiva("Natación", "Clases para todas las edades"),
-            ActividadDeportiva("Yoga", "Sesiones de relajación y estiramiento"),
-            ActividadDeportiva("Tenis", "Canchas disponibles para práctica"),
-            ActividadDeportiva("Vóley", "Entrenamiento en playa y gimnasio")
+            ActividadDeportiva(1, "Fútbol", "Partidos semanales en cancha sintética"),
+            ActividadDeportiva(2, "Natación", "Clases para todas las edades"),
+            ActividadDeportiva(3, "Yoga", "Sesiones de relajación y estiramiento"),
+            ActividadDeportiva(4, "Tenis", "Canchas disponibles para práctica"),
+            ActividadDeportiva(5, "Vóley", "Entrenamiento en playa y gimnasio")
         )
 
         // Configurar las tarjetas de actividades
