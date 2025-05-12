@@ -36,9 +36,9 @@
     <!-- Botón Socios -->
     <Button
         android:id="@+id/btnSocios"
-        android:layout_width="wrap_content"
-        android:layout_height="137dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="300dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_background"
         android:elevation="0dp"
         android:minWidth="200dp"
@@ -57,9 +57,9 @@
 
     <Button
         android:id="@+id/btnNoSocios"
-        android:layout_width="wrap_content"
-        android:layout_height="137dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="300dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_background"
         android:elevation="0dp"
         android:minWidth="200dp"
@@ -76,9 +76,9 @@
 
     <Button
         android:id="@+id/btnActividades3"
-        android:layout_width="wrap_content"
-        android:layout_height="137dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="300dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button_background"
         android:elevation="0dp"
         android:minWidth="200dp"
@@ -93,28 +93,28 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="250dp"
         android:layout_weight="1" />
 
     <!-- LinearLayout para el botón Salir alineado a la derecha -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:layout_marginBottom="27dp">
+        android:layout_marginBottom="5dp"
+        android:gravity="end">
 
         <Button
             android:id="@+id/btnSalir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minWidth="100dp"
-            android:minHeight="60dp"
-            android:paddingVertical="16dp"
-            android:paddingHorizontal="20dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/button_background"
             android:elevation="0dp"
+            android:minWidth="100dp"
+            android:minHeight="60dp"
             android:outlineProvider="none"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="16dp"
             android:stateListAnimator="@null"
             android:text="@string/exit"
             android:textSize="16sp"
