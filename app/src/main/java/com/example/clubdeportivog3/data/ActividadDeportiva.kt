@@ -1,4 +1,4 @@
-package com.example.clubdeportivog3
+package com.example.clubdeportivog3.data
 
 data class ActividadDeportiva(
     val id: Int = 0,

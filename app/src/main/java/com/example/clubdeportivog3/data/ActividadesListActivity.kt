@@ -1,4 +1,4 @@
-package com.example.clubdeportivog3
+package com.example.clubdeportivog3.data
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -10,6 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clubdeportivog3.R
+import com.example.clubdeportivog3.activities.AddEditActividadActivity
+import com.example.clubdeportivog3.activities.DeletedActivity
+import com.example.clubdeportivog3.activities.MenuActivity
 
 class ActividadesListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

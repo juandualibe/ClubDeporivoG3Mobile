@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:padding="24dp"
     android:gravity="center_horizontal"
-    tools:context=".MenuActivity">
+    tools:context=".activities.MenuActivity">
 
     <!-- LinearLayout para el título -->
     <LinearLayout

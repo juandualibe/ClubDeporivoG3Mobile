@@ -1,4 +1,4 @@
-package com.example.clubdeportivog3
+package com.example.clubdeportivog3.data
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -8,6 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clubdeportivog3.R
+import com.example.clubdeportivog3.activities.DeletedSocioActivity
+import com.example.clubdeportivog3.activities.PaymentRegisteredActivity
+import com.example.clubdeportivog3.activities.SocioDetailsActivity
 
 class AdaptadorVencimientos(
     private val listaVencimientos: List<String>,

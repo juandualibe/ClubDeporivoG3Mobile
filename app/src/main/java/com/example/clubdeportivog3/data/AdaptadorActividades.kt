@@ -1,4 +1,4 @@
-package com.example.clubdeportivog3
+package com.example.clubdeportivog3.data
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clubdeportivog3.R
 
 class AdaptadorActividades(
     private val listaActividades: List<ActividadDeportiva>,

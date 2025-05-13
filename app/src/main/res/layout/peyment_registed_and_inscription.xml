@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="#F5FAFF"
-    tools:context=".PaymentRegisteredAndInscriptionActivity">
+    tools:context=".activities.PaymentRegisteredAndInscriptionActivity">
 
     <!-- Imagen de confirmación -->
     <ImageView

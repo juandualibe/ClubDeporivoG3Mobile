@@ -1,4 +1,4 @@
-package com.example.clubdeportivog3
+package com.example.clubdeportivog3.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.clubdeportivog3.data.AdaptadorSocios
+import com.example.clubdeportivog3.R
 
 class SocioListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.example.clubdeportivog3
+package com.example.clubdeportivog3.activities
 
 import android.app.AlertDialog
 import android.content.Intent
@@ -11,6 +11,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.clubdeportivog3.data.ActividadDeportiva
+import com.example.clubdeportivog3.R
 
 class NoSocioDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

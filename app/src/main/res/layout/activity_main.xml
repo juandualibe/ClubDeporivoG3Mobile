@@ -8,7 +8,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:padding="24dp"
-    tools:context="com.example.clubdeportivog3.SignInActivity">
+    tools:context="com.example.clubdeportivog3.activities.SignInActivity">
 
     <!-- Imagen en la parte superior -->
     <ImageView
